@@ -19,7 +19,7 @@ echo " Gnome Tweaks ✔"
 echo "⟹ INSTALLING GNOME EXTENSION-INSTALLER --------------------------------------------------"
 echo ""
 cd ~/
-sudo apt install wget
+sudo apt install wget curl git 
 wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
 sudo mv gnome-shell-extension-installer /usr/bin/
@@ -104,7 +104,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Super>E'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Files'
 
-
+killall -3 gnome-shell
 
 # Install/Set wallpaper
 echo "⟹ SETTING WALLPAPER --------------------------------------------------"
@@ -145,7 +145,7 @@ enable_extens() {
 
     done
 }
-enable_list
+enable_extens
 
 
 # Set Gnome themes
