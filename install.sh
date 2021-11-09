@@ -5,19 +5,26 @@
 
 # Install Gnome tweaks, shell
 echo "⟹ INSTALLING GNOME TWEAKS & SHELL"
-sudo apt install gnome-tweak-tool gnome-shell gnome-shell-extensions -y
+echo ""
+sudo apt install gnome-tweak-tool gnome-shell -y
+echo " Gnome Tweaks ✔"
 
 
 # Install Gnome Extensions-installer
 echo "⟹ INSTALLING GNOME EXTENSION-INSTALLER"
+echo ""
 cd ~/
 sudo apt install wget
 wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
 chmod +x gnome-shell-extension-installer
 sudo mv gnome-shell-extension-installer /usr/bin/
 
+
+
+
 # Install Gnome extensions
 echo "⟹ INSTALLING GNOME EXTENSIONS"
+echo ""
 declare -A EXTENS
 EXTENS=(
 	["User Themes"]="gnome-shell-extension-installer 19"
@@ -46,20 +53,60 @@ parse_list() {
 }
 parse_list
 dconf load /org/gnome/shell/extensions/ < ~/Downloads/POPtheme/extension-settings.dconf
+gsettings set org.gnome.shell disable-user-extensions false
 
-# mv ~/Downloads/POPtheme/Extensions/ ~/.local/share/gnome-shell/extensions/
+
 
 
 # Install Gnome themes
 echo "⟹ INSTALLING GNOME THEMES"
+echo ""
 cd ~/
 dir="$(find -name .themes)" 
 if [ "$dir" = "./.themes" ];then
 	cd ~/Downloads/POPtheme/Themes/
 	mv ./* ~/.themes/
+	echo "⎈ Themes ✔"
 else
 	mkdir .themes
 	cd ~/Downloads/POPtheme/Themes/
 	mv ./* ~/.themes/
+	echo "⎈ Themes ✔"
 fi
 
+dir2="$(find -name .icons)" 
+if [ "$dir" = "./.icons" ];then
+	cd ~/Downloads/POPtheme/Icons/
+	mv ./* ~/.icons/
+	echo "⎈ Icons/cursors ✔"
+else
+	mkdir .themes
+	cd ~/Downloads/POPtheme/Icons/
+	mv ./* ~/.icons/
+	echo "⎈ Icons/cursors ✔"
+fi
+
+
+# Set Gnome themes
+echo "⟹ SETTING GNOME THEMES"
+echo ""
+gsettings set org.gnome.desktop.interface applications-theme 'Peace-Harmony-GTK'
+echo "⎈ applications theme ✔"
+gsettings set org.gnome.desktop.interface cursor-theme 'Fluent-dark-cursors'
+echo "⎈ cursor theme ✔"
+gsettings set org.gnome.desktop.interface icons-theme 'Tela-circle-purple'
+echo "⎈ icons theme ✔"
+gsettings set org.gnome.desktop.interface shell-theme 'Flat-Remix-Blue-Dark-fullPanel-shell'
+echo "⎈ shell theme ✔"
+
+
+
+# Install/Set wallpaper
+echo "⟹ SETTING WALLPAPER"
+echo ""
+cd ~/Pictures
+mkdir Wallpapers
+mv ~/Downloads/POPtheme/popwall.png ~/Pictures/Wallpapers/ 
+usrnm="$(whoami)"
+gsettings set org.gnome.desktop.background picture-uri "file:/home/$usrnm/Pictures/Wallpapers/popwall.png"
+echo "Wallpaper ✔"
