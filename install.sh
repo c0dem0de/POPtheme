@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Updates repo and system resources
-sudo apt update && sudo apt upgrade -y ; sudo apt autoremove
+# sudo apt update && sudo apt upgrade -y ; sudo apt autoremove
 
 # Install Gnome tweaks, shell
 echo "⟹ INSTALLING GNOME TWEAKS & SHELL"
@@ -47,7 +47,7 @@ parse_list() {
 parse_list
 dconf load /org/gnome/shell/extensions/ < ~/Downloads/POPtheme/extension-settings.dconf
 
-mv ~/Downloads/POPtheme/Extensions/ ~/.local/share/gnome-shell/extensions/
+# mv ~/Downloads/POPtheme/Extensions/ ~/.local/share/gnome-shell/extensions/
 
 
 # Install Gnome themes
@@ -55,9 +55,11 @@ echo "⟹ INSTALLING GNOME THEMES"
 cd ~/
 dir="$(find -name .themes)" 
 if [ "$dir" = "./.themes" ];then
-	mv ~/Downloads/POPtheme/Themes/ ~/.themes/
+	cd ~/Downloads/POPtheme/Themes/
+	mv ./* ~/.themes/
 else
 	mkdir .themes
-	mv ~/Downloads/POPtheme/Themes/ ~/.themes/
+	cd ~/Downloads/POPtheme/Themes/
+	mv ./* ~/.themes/
 fi
 
