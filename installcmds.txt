@@ -1,0 +1,29 @@
+Softwares:
+	[Vim]=[sudo apt-get install vim]
+	[Audacious]=[sudo apt install audacious]
+	[GIMP]=[sudo apt install gimp]
+
+Extensions:
+	["user themes"]=gnome-shell-extension-installer 19
+	["gsconnect"]=gnome-shell-extension-installer 1319
+	["sound input and output chooser"]=gnome-shell-extension-installer 906
+	["clipboard indicator"]=gnome-shell-extension-installer 779
+	["lock Keys"]=gnome-shell-extension-installer 36
+	["removeable drive menu"]=gnome-shell-extension-installer 7
+	["workspaces thumbnails"]=gnome-shell-extension-installer 2557
+	["screenshot tool"]=gnome-shell-extension-installer 1112
+	✔["Time ++"]=gnome-shell-extension-installer 1238
+	✔["babar task"]=gnome-shell-extension-installer 4000
+	✔["coverflow alt+tab"]=gnome-shell-extension-installer 97
+	✔["floating dock"]=gnome-shell-extension-installer 3730
+	✔["Unite"]="gnome-shell-extension-installer 1287"
+
+Themes:
+	Applications : Peace Harmony GTK 
+	Cursor       : Fluent Dark Cursors
+	Icons        : Tela Circle Purple
+	Shell        : Flat Remix Blue Dark Fullpanel shell
+	
+
+
+
