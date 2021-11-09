@@ -45,6 +45,7 @@ parse_list() {
     done
 }
 parse_list
+dconf load /org/gnome/shell/extensions/ < ~/Downloads/POPtheme/extension-settings.dconf
 
 mv ~/Downloads/POPtheme/Extensions/ ~/.local/share/gnome-shell/extensions/
 
