@@ -1,0 +1,208 @@
+[babar]
+desaturate-icons=false
+display-activities=true
+display-app-grid=false
+display-app-menu=false
+display-dash=true
+display-favorites=false
+display-places-icon=false
+display-tasks=true
+display-workspaces=false
+display-workspaces-thumbnails=false
+favorites-first=false
+icon-size=20
+reduce-padding=true
+rounded-workspaces-buttons=false
+thumbnail-max-size=25
+
+[bluetooth-quick-connect]
+bluetooth-auto-power-off=true
+bluetooth-auto-power-off-interval=50
+
+[caffeine]
+user-enabled=false
+
+[clipboard-indicator]
+history-size=17
+notify-on-copy=false
+
+[coverflowalttab]
+animation-time=250
+dim-factor=10
+elastic-mode=false
+enforce-primary-monitor=false
+icon-style='Overlay'
+switcher-style='Timeline'
+
+[dash-to-dock]
+animate-show-apps=true
+animation-time=0.15000000000000002
+apply-custom-theme=false
+autohide-in-fullscreen=true
+background-color='#00d6ff'
+background-opacity=0.050000000000000003
+border-radius=16
+click-action='minimize'
+custom-background-color=true
+custom-theme-shrink=true
+dash-max-icon-size=35
+dock-fixed=false
+dock-position='BOTTOM'
+extend-height=false
+floating-margin=7
+force-straight-corner=false
+height-fraction=1.0
+hide-delay=0.20000000000000001
+hot-keys=false
+icon-size-fixed=false
+intellihide-mode='FOCUS_APPLICATION_WINDOWS'
+isolate-monitors=true
+isolate-workspaces=true
+pressure-threshold=40.0
+require-pressure-to-show=true
+running-indicator-style='DASHES'
+scroll-action='do-nothing'
+shortcut-timeout=0.5
+show-apps-at-top=false
+show-delay=0.20000000000000001
+show-favorites=true
+show-mounts=false
+show-windows-preview=true
+transparency-mode='FIXED'
+
+[extensions]
+position='panel'
+show-add=true
+
+[flypie]
+active-stack-child='menu-editor-page'
+center-color-mode='auto'
+center-color-mode-hover='auto'
+child-color-mode='auto'
+child-color-mode-hover='auto'
+easing-duration=0.25
+easing-mode='ease-in-out-quad'
+font='SF Mono Bold 11'
+global-scale=1.2
+grandchild-color-mode='parent'
+grandchild-color-mode-hover='parent'
+menu-configuration='[{"name":"Example Menu","icon":"/home/home/Pictures/Wallpapers/Icons/Linux logo.png","type":"CustomMenu","data":{},"shortcut":"<Shift>space","id":0,"centered":false,"children":[{"name":"Up","icon":"/home/home/Pictures/Wallpapers/Icons/arrow-up.png","type":"Shortcut","data":{"shortcut":"<Primary><Super>Up"},"angle":-1},{"name":"Favorites","icon":"/home/home/Pictures/Wallpapers/Icons/favorite.png","type":"Favorites","data":{},"angle":-1},{"name":"Down","icon":"/home/home/Pictures/Wallpapers/Icons/down-arrow.png","type":"Shortcut","data":{"shortcut":"<Primary><Super>Down"},"angle":-1},{"name":"Alacritty","icon":"com.alacritty.Alacritty","type":"Command","data":{"command":"alacritty"},"angle":-1}]}]'
+stats-abortions=uint32 54
+stats-achievement-dates={'journey0': int64 1634659024923, 'bigmenus0': 1634659767954, 'cancellor0': 1634660425594, 'menu-exporter0': 1634661532520, 'bigmenus1': 1634661938959, 'depth1-gesture-selector0': 1634662181043, 'master0': 1634667132922, 'journey1': 1635010883984}
+stats-added-items=uint32 19
+stats-click-selections-depth1=uint32 3
+stats-gesture-selections-depth1=uint32 48
+stats-gesture-selections-depth2=uint32 7
+stats-gesture-selections-depth3=uint32 5
+stats-menus-exported=uint32 2
+stats-selections=uint32 63
+stats-selections-1000ms-depth1=uint32 33
+stats-selections-3000ms-depth3=uint32 1
+stats-selections-500ms-depth1=uint32 19
+stats-selections-750ms-depth1=uint32 27
+stats-settings-opened=uint32 17
+stats-unread-achievements=uint32 7
+text-color='rgb(17,1,1)'
+trace-color='rgb(42,46,56)'
+trace-min-length=100.0
+trace-thickness=2.5
+
+[gsconnect]
+enabled=false
+id='6ac4ee44-06fd-4d5f-a145-20ef63ac9cab'
+name='pop-os'
+
+[lockkeys]
+style='numlock'
+
+[mediacontrols]
+mouse-actions=['toggle_play', 'toggle_menu', 'none', 'none', 'none', 'none', 'none', 'none']
+
+[ncom/github/hermes83/compiz-alike-magic-lamp-effect]
+duration=300.0
+effect='default'
+x-tiles=10.0
+y-tiles=10.0
+
+[netspeed]
+device='all'
+icon-display=false
+show-sum=false
+
+[pop-shell]
+active-hint=false
+gap-inner=uint32 1
+gap-outer=uint32 1
+hint-color-rgba='rgb(0,45,143)'
+pop-workspace-down=['<Shift><Super>Down', '<Shift><Super>j']
+pop-workspace-up=['<Shift><Super>Up', '<Shift><Super>k']
+show-title=false
+smart-gaps=false
+snap-to-grid=false
+tile-by-default=false
+toggle-stacking-global=@as []
+
+[screenshot]
+capture-delay=0
+enable-indicator=true
+enable-notification=true
+filename-template='{N}-{Y}{m}{d}{H}{M}{S}-{w}x{h}'
+imgur-enable-notification=true
+save-location='/home/home/Pictures/Screenshots'
+save-screenshot=true
+
+[sound-output-device-chooser]
+ports-settings='{"version":2,"ports":[]}'
+
+[timepp]
+alarms-fullscreen-monitor-pos=0
+alarms-play-sound=true
+alarms-sound-file-path='file:///home/home/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/bell.ogg'
+pomodoro-sound-file-path-long-break='file:///home/home/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
+pomodoro-sound-file-path-pomo='file:///home/home/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
+pomodoro-sound-file-path-short-break='file:///home/home/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
+sections={'Timer': {'enabled': false}, 'Stopwatch': {'enabled': false}, 'Pomodoro': {'enabled': false}, 'Alarms': {'enabled': true}, 'Todo': {'enabled': false}}
+timer-sound-file-path='file:///home/home/.local/share/gnome-shell/extensions/timepp@zagortenay333/data/sounds/beeps.ogg'
+todo-resume-tracking=true
+unicon-mode=true
+
+[unite]
+app-menu-ellipsize-mode='end'
+app-menu-max-width=0
+autofocus-windows=false
+desktop-name-text='     ⦁POP! OS⦁'
+enable-titlebar-actions=false
+extend-left-box=false
+hide-activities-button='always'
+hide-app-menu-icon=true
+hide-dropdown-arrows=true
+hide-window-titlebars='always'
+notifications-position='center'
+reduce-panel-spacing=false
+restrict-to-primary-screen=false
+show-desktop-name=true
+show-legacy-tray=true
+show-window-buttons='always'
+show-window-title='never'
+window-buttons-placement='first'
+window-buttons-theme='whitesur'
+
+[user-theme]
+name='Flat-Remix-Blue-Dark-fullPanel-shell'
+
+[vitals]
+alphabetize=true
+fixed-widths=false
+hot-sensors=['_memory_usage_']
+position-in-panel=1
+show-battery=true
+show-fan=false
+show-storage=false
+storage-path='/home/home'
+update-time=5
+use-higher-precision=true
+
+[wsmatrix]
+num-columns=2
+num-rows=1
+show-thumbnails=false
