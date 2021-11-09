@@ -28,11 +28,11 @@ EXTENS=(
 	["Removeable drive menu"]="gnome-shell-extension-installer 7"
 	["Workspaces Thumbnails"]="gnome-shell-extension-installer 2557"
 	["Screenshot Tool"]="gnome-shell-extension-installer 1112"
-	# ["Time ++"]="gnome-shell-extension-installer 1238"
-	# ["Unite"]="gnome-shell-extension-installer 1287"
-	# ["Babar Task"]="gnome-shell-extension-installer 4000"
-	# ["Coverflow alt+tab"]="gnome-shell-extension-installer 97"
-	# ["Floating Dock"]="gnome-shell-extension-installer 3730"
+	["Time ++"]="gnome-shell-extension-installer 1238"
+	["Unite"]="gnome-shell-extension-installer 1287"
+	["Babar Task"]="gnome-shell-extension-installer 4000"
+	["Coverflow alt+tab"]="gnome-shell-extension-installer 97"
+	["Floating Dock"]="gnome-shell-extension-installer 3730"
 )
 
 parse_list() {
@@ -44,6 +44,7 @@ parse_list() {
 
     done
 }
+parse_list
 
 mv ~/Downloads/POPtheme/Extensions/ ~/.local/share/gnome-shell/extensions/
 
