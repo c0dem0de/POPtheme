@@ -12,6 +12,7 @@ Extensions:
 	["removeable drive menu"]=gnome-shell-extension-installer 7
 	["workspaces thumbnails"]=gnome-shell-extension-installer 2557
 	["screenshot tool"]=gnome-shell-extension-installer 1112
+	["Bluetooth Quick Connect"]=gnome-shell-extension-installer 1401
 	✔["Time ++"]=gnome-shell-extension-installer 1238
 	✔["babar task"]=gnome-shell-extension-installer 4000
 	✔["coverflow alt+tab"]=gnome-shell-extension-installer 97
@@ -27,3 +28,17 @@ Themes:
 
 
 
+["User Themes"]="user-theme@gnome-shell-extensions.gcampax.github.com"
+["Unite"]="unite@hardpixel.eu"
+["Screenshot Tool"]="gnome-shell-screenshot@ttll.de"
+["Removeable drive menu"]="drive-menu@gnome-shell-extensions.gcampax.github.com"
+["GSconnect"]="gsconnect@andyholmes.github.io"
+["Clipboard Indicator"]="clipboard-indicator@tudmotu.com"
+["Lock Keys"]="lockkeys@vaina.lt"
+["Babar Task"]="babar@fthx"
+["Time ++"]="timepp@zagortenay333"
+["Workspaces Thumbnails"]="workspaces-thumbnails@fthx"
+["Bluetooth Quick Connect"]="bluetooth-quick-connect@bjarosze.gmail.com"
+["Floating Dock"]="floating-dock@nandoferreira_prof@hotmail.com"
+["Sound input and output Chooser"]="sound-output-device-chooser@kgshank.net"
+["Coverflow alt+tab"]="CoverflowAltTab@palatis.blogspot.com"
