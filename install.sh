@@ -1,34 +1,61 @@
 #! /bin/bash
 
-# Updates repo and system resources
-# sudo apt update && sudo apt upgrade -y ; sudo apt autoremove
-
-
-# ========================================================INSTALLING/SETTING THEMES/EXTENSIONS========================================================
-
-
-# Install Gnome tweaks, shell
-echo "⟹ INSTALLING GNOME TWEAKS & SHELL --------------------------------------------------"
-echo ""
-sudo apt install gnome-tweak-tool gnome-shell -y
-echo " Gnome Tweaks ✔"
-
-
-
-# Install Gnome Extensions-installer
-echo "⟹ INSTALLING GNOME EXTENSION-INSTALLER --------------------------------------------------"
-echo ""
 cd ~/
-sudo apt install wget curl git 
-wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer"
-chmod +x gnome-shell-extension-installer
-sudo mv gnome-shell-extension-installer /usr/bin/
 
 
+# 		-- update sys & repo
+# sudo apt update && sudo apt upgrade -y 
+# sudo apt autoremove
+# clear
 
-# Install Gnome extensions
-echo "⟹ INSTALLING GNOME EXTENSIONS --------------------------------------------------"
-echo ""
+
+# 		-- install some packages
+printf "\n⟹  INSTALLING PACKAGES\n"
+
+sudo apt install gnome-shell -y && echo "⎈ Gnome Shell ✔"
+sudo apt install gnome-tweak-tool -y && echo "⎈ Gnome Tool ✔" 
+sudo apt install wget -y && echo "⎈ wget ✔"
+sudo apt install curl -y && echo "⎈ curl ✔"
+sudo apt install git -y && echo "⎈ git ✔"
+
+
+# 		-- install extension installer
+printf "\n⟹  INSTALLING GNOME-EXTENSION-INSTALLER\n"
+
+cd ~/
+wget -O gnome-shell-extension-installer "https://github.com/brunelli/gnome-shell-extension-installer/raw/master/gnome-shell-extension-installer" && echo "⎈ gnome extension installer ✔"
+chmod +x gnome-shell-extension-installer && echo "		- made executable ✔"
+sudo mv gnome-shell-extension-installer /usr/bin/ && echo "		- moved to /bin ✔"
+
+
+# 		-- install themes
+printf "\n⟹  INSTALLING GNOME-THEMES\n"
+
+dir="$(find -name .themes)" 
+if [ "$dir" = "./.themes" ];then
+	cd ~/Downloads/POPtheme/Themes/
+	mv ./* ~/.themes/ && echo "		- themes ✔"
+else
+	mkdir .themes
+	cd ~/Downloads/POPtheme/Themes/
+	mv ./* ~/.themes/ && echo "		- themes ✔"
+fi
+
+cd ~/
+dir2="$(find -name .icons)" 
+if [ "$dir" = "./.icons" ];then
+	cd ~/Downloads/POPtheme/Icons/
+	mv ./* ~/.icons/ && echo "		- icons ✔"
+else
+	mkdir .icons
+	cd ~/Downloads/POPtheme/Icons/
+	mv ./* ~/.icons/ && echo "		- icons ✔"
+fi
+
+
+# 		-- install extensions
+printf "\n⟹  INSTALLING GNOME-EXTENSIONS\n"
+
 declare -A EXTENS
 EXTENS=(
 	["User Themes"]="gnome-shell-extension-installer 19"
@@ -51,8 +78,7 @@ install_list() {
     for name in "${!EXTENS[@]}"
     do
       
-      ${EXTENS[$name]}
-      echo "⎈ $name ✔"
+      ${EXTENS[$name]} && echo "⎈ $name ✔"
 
     done
 }
@@ -60,42 +86,30 @@ install_list
 dconf load /org/gnome/shell/extensions/ < ~/Downloads/POPtheme/extension-settings.dconf
 
 
+# 		-- install rofi menu
+printf "\n⟹  INSTALLING CUSTOM-ROFI\n"
 
-# Install Gnome themes
-echo "⟹ INSTALLING GNOME THEMES --------------------------------------------------"
-echo ""
-cd ~/
-dir="$(find -name .themes)" 
-if [ "$dir" = "./.themes" ];then
-	cd ~/Downloads/POPtheme/Themes/
-	mv ./* ~/.themes/
-else
-	mkdir .themes
-	cd ~/Downloads/POPtheme/Themes/
-	mv ./* ~/.themes/
-fi
-
-cd ~/
-dir2="$(find -name .icons)" 
-if [ "$dir" = "./.icons" ];then
-	cd ~/Downloads/POPtheme/Icons/
-	mv ./* ~/.icons/
-else
-	mkdir .icons
-	cd ~/Downloads/POPtheme/Icons/
-	mv ./* ~/.icons/
-fi
-
-# Install ROFI
-echo "⟹ INSTALLING ROFI --------------------------------------------------"
-echo ""
 cd ~/
 git clone https://github.com/c0dem0de/ROFI.git
 cd ~/ROFI/
 chmod +x INSTALL.sh
-./INSTALL.sh
+./INSTALL.sh && echo "⎈ ROFI ✔"
+
+
+# 	---	restart gnome shell	---
+killall -3 gnome-shell
+sleep 5
+
+
+# 		-- Set wallpaper, enable extensions, set themes
+printf "\n⟹  SETTING UP THINGS\n"
+
+mv ~/Downloads/POPtheme/Wallpapers ~/Pictures/ 
+usrnm="$(whoami)"
+gsettings set org.gnome.desktop.background picture-uri "file:/home/$usrnm/Pictures/Wallpapers/unsplash4.jpg" && echo "⎈ wallpapers ✔"
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
+
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'sh -c '~/ROFI/MAIN-MENU.sh''
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Super>S'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'ROFI-MENU'
@@ -104,38 +118,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Super>E'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Files'
 
-killall -3 gnome-shell
-sleep 5
 
-# Install/Set wallpaper
-echo "⟹ SETTING WALLPAPER --------------------------------------------------"
-echo ""
-cd ~/Pictures
-mkdir Wallpapers
-mv ~/Downloads/POPtheme/popwall.png ~/Pictures/Wallpapers/ 
-usrnm="$(whoami)"
-gsettings set org.gnome.desktop.background picture-uri "file:/home/$usrnm/Pictures/Wallpapers/popwall.png"
-echo "Wallpaper ✔"
-
-
-
-# Set Gnome themes
-echo "⟹ SETTING GNOME THEMES --------------------------------------------------"
-echo ""
-gsettings set org.gnome.desktop.interface gtk-theme 'Peace-Harmony-GTK'
-echo "⎈ applications theme ✔"
-gsettings set org.gnome.desktop.interface cursor-theme 'Fluent-dark-cursors'
-echo "⎈ cursor theme ✔"
-gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-purple'
-echo "⎈ icons theme ✔"
-gsettings set org.gnome.desktop.interface shell-theme 'Flat-Remix-Blue-Dark-fullPanel-shell'
-echo "⎈ shell theme ✔"
-
-
-
-# Enable Gnome extensions
-echo "⟹ ENABLING EXTENSIONS --------------------------------------------------"
-echo ""
 declare -A EXTENON
 EXTENON=(
 	["User Themes"]="user-theme@gnome-shell-extensions.gcampax.github.com"
@@ -157,10 +140,14 @@ enable_extens() {
     for name in "${!EXTENON[@]}"
     do
       
-	  gnome-extensions enable ${EXTENON[$name]}
-      echo "⎈ $name Enabled ✔"
+	  gnome-extensions enable ${EXTENON[$name]} && echo "⎈ $name Enabled ✔"
 
     done
 }
 enable_extens
 
+
+gsettings set org.gnome.desktop.interface gtk-theme 'Peace-Harmony-GTK' && echo "⎈ applications theme ✔"
+gsettings set org.gnome.desktop.interface cursor-theme 'Fluent-dark-cursors' && echo "⎈ cursor theme ✔"
+gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-purple' && echo "⎈ icons theme ✔"
+# gsettings set org.gnome.desktop.interface shell-theme 'Flat-Remix-Blue-Dark-fullPanel-shell' && echo "⎈ shell theme ✔"
