@@ -105,6 +105,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Files'
 
 killall -3 gnome-shell
+sleep 5
 
 # Install/Set wallpaper
 echo "⟹ SETTING WALLPAPER --------------------------------------------------"
@@ -115,6 +116,22 @@ mv ~/Downloads/POPtheme/popwall.png ~/Pictures/Wallpapers/
 usrnm="$(whoami)"
 gsettings set org.gnome.desktop.background picture-uri "file:/home/$usrnm/Pictures/Wallpapers/popwall.png"
 echo "Wallpaper ✔"
+
+
+
+# Set Gnome themes
+echo "⟹ SETTING GNOME THEMES --------------------------------------------------"
+echo ""
+gsettings set org.gnome.desktop.interface gtk-theme 'Peace-Harmony-GTK'
+echo "⎈ applications theme ✔"
+gsettings set org.gnome.desktop.interface cursor-theme 'Fluent-dark-cursors'
+echo "⎈ cursor theme ✔"
+gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-purple'
+echo "⎈ icons theme ✔"
+gsettings set org.gnome.desktop.interface shell-theme 'Flat-Remix-Blue-Dark-fullPanel-shell'
+echo "⎈ shell theme ✔"
+
+
 
 # Enable Gnome extensions
 echo "⟹ ENABLING EXTENSIONS --------------------------------------------------"
@@ -140,26 +157,10 @@ enable_extens() {
     for name in "${!EXTENON[@]}"
     do
       
-			gnome-extensions enable ${EXTENON[$name]}
+	  gnome-extensions enable ${EXTENON[$name]}
       echo "⎈ $name Enabled ✔"
 
     done
 }
 enable_extens
-
-
-# Set Gnome themes
-echo "⟹ SETTING GNOME THEMES --------------------------------------------------"
-echo ""
-gsettings set org.gnome.desktop.interface gtk-theme 'Peace-Harmony-GTK'
-echo "⎈ applications theme ✔"
-gsettings set org.gnome.desktop.interface cursor-theme 'Fluent-dark-cursors'
-echo "⎈ cursor theme ✔"
-gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-purple'
-echo "⎈ icons theme ✔"
-gsettings set org.gnome.desktop.interface shell-theme 'Flat-Remix-Blue-Dark-fullPanel-shell'
-echo "⎈ shell theme ✔"
-
-
-
 
