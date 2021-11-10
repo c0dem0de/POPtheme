@@ -42,3 +42,58 @@ Themes:
 ["Floating Dock"]="floating-dock@nandoferreira_prof@hotmail.com"
 ["Sound input and output Chooser"]="sound-output-device-chooser@kgshank.net"
 ["Coverflow alt+tab"]="CoverflowAltTab@palatis.blogspot.com"
+
+
+
+
+
+["Gnome Tweak Tool"]=
+["Gnome Shell"]=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
