@@ -155,10 +155,13 @@ gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-purple' && ech
 
 # 		-- Set wallpaper, enable extensions, set themes
 printf "\n\nINSTALLATION COMPLETE\n\n\n"
-echo "DISABLE BUILT IN EXTENSIONS:\
+echo "DISABLE BUILT IN EXTENSIONS:
 			-Dock
 			-Desktop Icons NG
 as these conflict with my included extensions"
 
+echo "KEYBOARD SHORTCUTS:
+			- Super+S: rofi menu
+			- Super+E: nautilus file manager"
 
 
