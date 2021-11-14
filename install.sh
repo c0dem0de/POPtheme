@@ -158,7 +158,7 @@ printf "\n\nINSTALLATION COMPLETE\n\n\n"
 echo "DISABLE BUILT IN EXTENSIONS:
 			-Dock
 			-Desktop Icons NG
-as these conflict with my included extensions"
+as these conflict with my included extensions\n"
 
 echo "KEYBOARD SHORTCUTS:
 			- Super+S: rofi menu
